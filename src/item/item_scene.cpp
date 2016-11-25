@@ -473,7 +473,6 @@ void ItemScene::deleteItems(QList<QGraphicsItem*> items)
         AbstractItem* it = qobject_cast<AbstractItem*>(item);
 
         if (it != nullptr) {
-            it->remove();
             delete it;
         } else {
             ItemNote* itn = qobject_cast<ItemNote*>(item);

@@ -212,7 +212,6 @@ void AbstractItem::contextMenuEvent(QGraphicsSceneContextMenuEvent* event)
     ungrabMouse(); //Important line! Otherwise the element will be moved after you close the context menu and draw a selection rectangle somewhere.
 
     if (actionSel == actionRemove) {
-        remove();
         delete this;
     } else if (actionSel == actionRename) {
         d->showRenameDialog();
@@ -484,7 +483,7 @@ void AbstractItem::remove()
 
 AbstractItem::~AbstractItem()
 {
-    remove(); //Call remove() once more, in case the item was directly deleted without calling remove first
+    remove();
 }
 
 const QImage AbstractItem::image() const
