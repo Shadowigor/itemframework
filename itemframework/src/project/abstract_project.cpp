@@ -77,7 +77,7 @@ bool AbstractProject::validateProjectDomDocument(const QDomDocument& projectDomD
 
 bool AbstractProject::loadSettingsScope()
 {
-    QDomElement projectDomElement = domDocument().toElement();
+    QDomElement projectDomElement = domDocument().firstChildElement();
 
     if (projectDomElement.hasChildNodes()) {
         // Handle children nodes
